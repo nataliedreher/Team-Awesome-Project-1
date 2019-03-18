@@ -2,23 +2,126 @@
     box-sizing: border-box;
 }
 
-/* Style the body */
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
+/* Start of Bootstrap */
+.form-inline .form-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 0
+}
+.form-inline .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle
 }
 
-/* Header/logo Title */
+.form-group {
+	margin-bottom: 1rem
+}
+
+.form-control {
+	display: block;
+	width: 100%;
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: #495057;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	border-radius: .25rem;
+	transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
+}
+
+.form-control::-ms-expand {
+	background-color: transparent;
+	border: 0
+}
+
+.form-control:focus {
+	color: #495057;
+	background-color: #fff;
+	border-color: #80bdff;
+	outline: 0;
+	box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25)
+}
+
+.form-control::-webkit-input-placeholder {
+	color: #6c757d;
+	opacity: 1
+}
+
+.form-control::-moz-placeholder {
+	color: #6c757d;
+	opacity: 1
+}
+
+.form-control:-ms-input-placeholder {
+	color: #6c757d;
+	opacity: 1
+}
+
+.form-control::-ms-input-placeholder {
+	color: #6c757d;
+	opacity: 1
+}
+
+.form-control::placeholder {
+	color: #6c757d;
+	opacity: 1
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+	background-color: #e9ecef;
+	opacity: 1
+}
+
+select.form-control:not([size]):not([multiple]) {
+	height: calc(2.25rem + 2px)
+}
+
+select.form-control:focus::-ms-value {
+	color: #495057;
+	background-color: #fff
+}
+/* END OF BOOTSTRAP */
+
+/* Style the body */
+body {
+  background-color: #484848;
+  margin: 0;
+  padding: 0;
+}
+
+label {
+    display: none;
+}
+
+/* Header/Logo Title */
 .header {
     padding: 20px;
     text-align: center;
-    background: #FFFFFF;
-    color: #484848;
+    background-color: #FFFFFF;
+    text-shadow: horizontal-offset vertical-offset blur color;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 }
 
 /* Increase the font size of the heading */
 .header h1 {
-    font-size: 40px;
+    font-family: "Arial Black", Gadget, sans-serif;
+    color: #FFFFFF;
+    text-align: center;
 }
 
 /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
@@ -27,26 +130,34 @@ body {
     background-color: transparent;
     position: sticky;
     position: -webkit-sticky;
-    border: 0;
-    border-radius: 5px;
     padding: 5px;
     top: 0;
+    background-color: #FFFFFF;
 }
 
 /* Style the navigation bar links */
 .navbar a {
-    float: left;
-    display: block;
-    color: #484848;
-    background-color: #fff;
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
-    border: 2px;
-    border-style: solid;
-    border-radius: 5px;
-    box-shadow: 2px 2px;
     margin: 5px;
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: #FFF;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    width: 100px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    cursor: pointer;
+    display: block;
+    float: left;
+    border-radius: 25px;
+    background-image: linear-gradient(to right, #47A8BD 0%, #21AA00 51%, #47A8BD 100%);
+    background-color: #fff;
+    text-decoration: none;
 }
 
 
@@ -57,19 +168,19 @@ body {
 
 /* Change color on hover */
 .navbar a:hover {
-    background-color: #47A8BD;
-    color: #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin: 8px 10px 12px;
+    background-position: right center;
 }
 
 /* Active/current link */
 .navbar a.active {
-    background-color: #9C3848;
-    color: #fff;
+    background-image: linear-gradient(to right, #FFAD69 0%, #9C3848 51%, #FFAD69 100%);
 }
 
 /* Column container */
 .row {  
-    display: -ms-flexbox; /* IE10 */
+    display: flexbox; /* IE10 */
     display: flex;
     -ms-flex-wrap: wrap; /* IE10 */
     flex-wrap: wrap;
@@ -88,8 +199,9 @@ body {
 .main {   
     -ms-flex: 70%; /* IE10 */
     flex: 70%;
-    background-color: #FFAD69;
+    background-color: #484848;
     padding: 20px;
+    font-family: sans-serif;
 }
 
 /* Fake image, just for this example */
@@ -100,69 +212,131 @@ body {
     padding: 20px;
 }
 
-/* Footer */
-.footer {
-    padding: 20px;
-    text-align: center;
-    background: #fff;
-    color: #484848;
-}
-
-#map-heading {
-    text-align: center;
-    color: #fff;
-}
-
-#map-placeholder {
+.mapouter {
+    text-align: right;
     height: 550px;
+    width: 100%;
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 550px;
+    width: 100%;
     border: 0;
     border-radius: 30px;
 }
 
-#font-1 {
-    color: #9C3848;
+/* Footer */
+.footer {
+    padding: 20px;
+    font-family: sans-serif;
+    text-align: center;
+    color: #FFFFFF;
+    background-size: 200% auto;
+    box-shadow: 20px 0 0 #eee;
+    box-shadow: 0 1px 3px rgba(0.12,0,0,0), 0 1px 2px rgba(0.24,0,0,0);
+    display: block;
+    background-color: #FFAD69;
+    text-decoration: none;
 }
 
-#font-2 {
-    color: #47A8BD;
+/* Custom styling for Logos in buttons */
+.location {
+    height: 125px;
+    width: 125px;
+    padding: 20px;
+    margin: 5px;
+    text-align: center;
+    background-size: 200% auto;
+    box-shadow: 0 0 20px #eee;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    cursor: pointer;
+    display: block;
+    border-radius: 30px;
+    background-color: #fff;
+    text-decoration: none;
 }
 
-#font-3 {
-    color: #FFAD69;
+/* Start of Div container styling */
+.logo-container {
+    -ms-flex: 100%;
+    flex: 100%;
+    background-color: transparent;
 }
 
-#font-4 {
-    color: #B2B2B2;
+.logo-row {
+    display: block;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0;
+    background-color: transparent;
+    text-align: center;
 }
 
-#font-5 {
-    color: #47A8BD;
+.logo-col {
+    display: inline-block;
+    -ms-flex: 5%;
+    flex: 5%;
+    text-align: center;
+    align-content: center;
+    padding: 20px;
+    background-color: transparent;
+    border: 0;
+    border-radius: 30px;
+    margin: 2%;
 }
-
-#font-6 {
-    color: #FFAD69;
-}
-
-#font-7 {
-    color: #21AA00;
-}
-
-#font-8 {
-    color: #9C3848;
-}
+/* END of Div Container Styling */
 
 #image-header {
     height: 50px;
     width: 50px;
 }
 
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-    .row {   
-        flex-direction: column;
+#logo-navbar {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+    float: left;
+}
+
+#exampleFormControlInput1 {
+    border: 0;
+    border-radius: 30px;
+}
+
+@media screen and (max-width: 1416px) {
+    .logo-col {
+        margin: 0;
     }
 }
 
+@media screen and (max-width: 1314px) {
+    .logo-col {
+        margin: 0;
+        padding: 5px;
+    }
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1114px) {
+    .row {   
+        flex-direction: column;
+    }
+    .logo-col {
+        margin: 100px;
+    }
+}
+
+@media screen and (max-width: 514px) {
+    .navbar a.right {
+        float: left;
+    }
+    #logo-navbar {
+        display: none;
+    }
+}
+ 
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 400px) {
     .navbar a {

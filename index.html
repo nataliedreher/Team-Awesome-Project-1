@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Project</title>
+    <title>One Stop</title>
     <link rel="icon" href="assets/images/One-Stop-Logo.png">
     <link rel="stylesheet" href="assets/css/style.css">
 
@@ -14,63 +14,66 @@
 
 <body>
 
-    <div class="header">
-        <h1><img src="assets/images/One-Stop-Logo.png" id="image-header"/><strong id="space"> </strong><strong id="font-1">O</strong><strong id="font-2">n</strong><strong id="font-3">e</strong><strong
-                id="font-4">-</strong><strong id="font-5">S</strong><strong id="font-6">t</strong><strong
-                id="font-7">o</strong><strong id="font-8">p</strong></h1>
-        <p>A <b>responsive</b> website created by Team Awesome One</p>
-    </div>
-
     <div class="navbar">
+        <img src="assets/images/One-Stop-Logo.png" alt="Logo" id="logo-navbar">
         <a href="#" class="active">Home</a>
-        <a href="#">Link</a>
-        <a href="#">Link</a>
-        <a href="#" class="right">Link</a>
+        <a href="#">About</a>
+        <a href="#">More</a>
+        <a href="#" class="right">Back</a>
     </div>
 
     <div class="row">
         <div class="main">
-            <h2 id="map-heading">Map</h2>
-            <div id="map"></div>
-            <div class="fakeimg" id="map-placeholder">(Map)</div>
+            <div class="mapouter">
+                <div class="gmap_canvas">
+                    <iframe width="100%" height="550px" id="gmap_canvas"
+                        src="https://maps.google.com/maps?q=university%20of%20san%20francisco&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                </div>
+            </div>
         </div>
         <div class="side">
             <form>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Email address</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="name@example.com">
+                    <label for="exampleFormControlInput1">City</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="City">
                 </div>
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Example select</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlSelect2">Example multiple select</label>
-                    <select multiple class="form-control" id="exampleFormControlSelect2">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Example textarea</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <div class="logo-container">
+                    <div class="logo-row">
+                        <div class="logo-col">
+                            <a href="#"><img src="assets/images/Gas-Station-Logo.png" alt="Gas Station Logo"
+                                    class="location"></a>
+                        </div>
+                        <div class="logo-col">
+                            <a href="#"><img src="assets/images/Housing-Logo.png" alt="Housing Logo"
+                                    class="location"></a>
+                        </div>
+                    </div>
+                    <div class="logo-row">
+                        <div class="logo-col">
+                            <a href="#"><img src="assets/images/Park-Logo.png" alt="Park Logo" class="location"></a>
+                        </div>
+                        <div class="logo-col">
+                            <a href="#"><img src="assets/images/Hospital-Logo.png" alt="Hospital Logo"
+                                    class="location"></a>
+                        </div>
+                    </div>
+                    <div class="logo-row">
+                        <div class="logo-col">
+                            <a href="#"><img src="assets/images/Restaurant-Logo.png" alt="Restaurant Logo"
+                                    class="location"></a>
+                        </div>
+                        <div class="logo-col">
+                            <a href="#"><img src="assets/images/Hotel-Logo.png" alt="Hotel Logo" class="location"></a>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
 
     <div class="footer">
-        <h2>Footer</h2>
+        <h2>Credit: Pidchaya, Leo, Natalie, and Chandler</h2>
     </div>
 
     <script src="assets/javascript/logic.js"></script>
