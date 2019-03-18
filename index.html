@@ -24,12 +24,9 @@
 
     <div class="row">
         <div class="main">
-            <div class="mapouter">
-                <div class="gmap_canvas">
-                    <iframe width="100%" height="550px" id="gmap_canvas"
-                        src="https://maps.google.com/maps?q=university%20of%20san%20francisco&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                </div>
+            <div class="gmap_canvas">
+                <iframe width="100%" height="550px" id="gmap_canvas" src="https://maps.google.com/maps?q=university%20of%20san%20francisco&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
             </div>
         </div>
         <div class="side">
@@ -40,30 +37,30 @@
                 </div>
                 <div class="logo-container">
                     <div class="logo-row">
-                        <div class="logo-col">
+                        <div id="gas" class="logo-col">
                             <a href="#"><img src="assets/images/Gas-Station-Logo.png" alt="Gas Station Logo"
                                     class="location"></a>
                         </div>
-                        <div class="logo-col">
+                        <div id="house" class="logo-col">
                             <a href="#"><img src="assets/images/Housing-Logo.png" alt="Housing Logo"
                                     class="location"></a>
                         </div>
                     </div>
                     <div class="logo-row">
-                        <div class="logo-col">
+                        <div id="parks" class="logo-col">
                             <a href="#"><img src="assets/images/Park-Logo.png" alt="Park Logo" class="location"></a>
                         </div>
-                        <div class="logo-col">
+                        <div id="hospital" class="logo-col">
                             <a href="#"><img src="assets/images/Hospital-Logo.png" alt="Hospital Logo"
                                     class="location"></a>
                         </div>
                     </div>
                     <div class="logo-row">
-                        <div class="logo-col">
+                        <div id="restaurant" class="logo-col">
                             <a href="#"><img src="assets/images/Restaurant-Logo.png" alt="Restaurant Logo"
                                     class="location"></a>
                         </div>
-                        <div class="logo-col">
+                        <div id="hotel" class="logo-col">
                             <a href="#"><img src="assets/images/Hotel-Logo.png" alt="Hotel Logo" class="location"></a>
                         </div>
                     </div>
@@ -75,8 +72,12 @@
     <div class="footer">
         <h2>Credit: Pidchaya, Leo, Natalie, and Chandler</h2>
     </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF-eDyAVsjiIBHAVrCNFhwrHuHHGVtGqg&callback=initMap"
+        async defer></script>
     <script src="assets/javascript/logic.js"></script>
+
 
 </body>
 
