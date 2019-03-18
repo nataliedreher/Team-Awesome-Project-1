@@ -133,6 +133,7 @@ label {
     padding: 5px;
     top: 0;
     background-color: #FFFFFF;
+    z-index: 1;
 }
 
 /* Style the navigation bar links */
@@ -212,16 +213,8 @@ label {
     padding: 20px;
 }
 
-.mapouter {
-    text-align: right;
-    height: 550px;
-    width: 100%;
-}
-
-.gmap_canvas {
-    overflow: hidden;
-    background: none !important;
-    height: 550px;
+#map {
+    height: 100%;
     width: 100%;
     border: 0;
     border-radius: 30px;
