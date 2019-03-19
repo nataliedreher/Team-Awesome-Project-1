@@ -1,0 +1,37 @@
+https://maps.googleapis.com/maps/api/directions/json?mode=transit&transit_mode=subway&transit_routing_preferences=less_walking&origin=Brooklyn&destination=75+9TH+AVE,+New+York,NY
+&waypoints=optimize:true|350+5th+ave,+New+York,+NY|165+avenue+A,+New+York|1520+york+ave,+new+york,+ny|&avoid=highways&key
+
+required parameters: origin and destination pair - can be string or latitude longitude, API key
+
+mode= bicycling, transit, driving, walking
+
+waypoints = stops,
+optimize: true (best route),
+use "|" to separate waypoints,
+avoid: can avoid tollways, ferries, highways
+
+via = just to walk by the point
+
+YELP -
+longitude,latitude,name,
+
+Necessary
+-----------------------------------------
+businesses[i].coordinates.latitude
+businesses[i].coordinates.longitude
+businesses[i].name
+
+Nice to have
+-----------------------------------------
+businesses[i].location.display_address[i]
+businesses[i].image_url
+
+GOOGLE MAPS - DIRECTIONS
+
+routes[i].legs[j]
+routes[i].legs[j].distance
+routes[i].legs[j].duration
+routes[i].legs[j].end_location
+routes[i].legs[j].start_location
+routes[i].legs[j].steps[k].OBJECTS
+
