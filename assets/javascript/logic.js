@@ -1,12 +1,15 @@
-function produceSearch(term) {
-    var _params = {
-        radius : 11000,
-        name : term,
-        location : (39.7392, -104.9903),
-        key : 'AIzaSyAF-eDyAVsjiIBHAVrCNFhwrHuHHGVtGqg',
-    };
-    var service = new google.maps.places.PlacesService(map_inst);
-    service.search(_params, requestSucceeded);
-}
+var placesURL = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Museum%20of%20Contemporary%20Art%20Australia&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=";
 
-console.log(produceSearch("greens"));
+var corsResolve = "https://cors-anywhere.herokuapp.com/";
+
+var apiKey = "AIzaSyAF-eDyAVsjiIBHAVrCNFhwrHuHHGVtGqg";
+
+function initialize() {
+    $.ajax({
+        url: corsResolve + placesURL + apiKey,
+        method: 'GET',
+    }).then(function(response) {
+        console.log(response);
+    })
+}
+initialize();
