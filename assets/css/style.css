@@ -298,6 +298,10 @@ label {
     border-radius: 30px;
 }
 
+#find-city {
+    display: none;
+}
+
 @media screen and (max-width: 1416px) {
     .logo-col {
         margin: 0;
