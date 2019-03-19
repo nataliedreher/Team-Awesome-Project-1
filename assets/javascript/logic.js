@@ -3,8 +3,7 @@ var cityInput;
 var corsResolve = "https://cors-anywhere.herokuapp.com/";
 var apiKey = "AIzaSyAF-eDyAVsjiIBHAVrCNFhwrHuHHGVtGqg";
 var cityInput = "";
-var yelpName = [];
-var yelpCoordinates = [];
+var yelp = [];
 
 var map;
 var lctn = "denver";
@@ -25,15 +24,10 @@ $.ajax({
     success: function (data) {
 
 for (var i=0; i < data.businesses.length; i++) {
-    // console.log("Name: " + data.businesses[i].name);
-    yelpName.push(data.businesses[i].name);
-    console.log(yelpName);
-    var obj = {latitude: data.businesses[i].coordinates.latitude, longitude: data.businesses[i].coordinates.longitude};
-    yelpCoordinates.push(obj);
-    console.log(yelpCoordinates);
-    // console.log("Latitude: " + );
-    // console.log("Longitude: " + );
 
+    var obj = {name: data.businesses[i].name, latitude: data.businesses[i].coordinates.latitude, longitude: data.businesses[i].coordinates.longitude};
+    yelp.push(obj);
+    console.log(yelp);
 }
         console.log('success: ', data);
     }
