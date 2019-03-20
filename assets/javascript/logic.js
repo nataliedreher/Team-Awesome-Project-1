@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var map;
 function initMap(latCity, lngCity) {
     var cityLatLng = { lat: latCity, lng: lngCity },
@@ -20,21 +19,21 @@ function initMap(latCity, lngCity) {
 }
 
 var locations = [];
-
 var latCity;
 var lngCity;
-=======
->>>>>>> 5143e9127ea9c3b3dfef118795842370c4a821fd
-
 var cityInput;
 var fullName;
-
+var corsResolve = "https://cors-anywhere.herokuapp.com/";
+var apiKey = "AIzaSyAF-eDyAVsjiIBHAVrCNFhwrHuHHGVtGqg";
+var yelpName = [];
+var yelpCoordinates = [];
 var map;
-var lctn = "denver";
-var term = "italian";
 var category = "food"
 var API_key = "gRTZgWGEiqxJda4wW8d6vbqO0QQcPqP3wPx0JsOTiX58Vw2cTzMS9WCe3ihn_A9CO9nAY3q2G0aaYoFtaDzxG710uz1CwzcE8UKfhKz8B23h1ai94ArS6oRbTfeLXHYx";
-var myurl = 'https://cors-anywhere.herokuapp.com/' + "https://api.yelp.com/v3/businesses/search?" + "&location=" + lctn + "&openNow=true&categories=" + category + "&term=" + term;
+var myurl = 'https://cors-anywhere.herokuapp.com/' + "https://api.yelp.com/v3/businesses/search?" + "&location=" + lctn + "&openNow=true&sortBy=rating&limit=5&categories=" + category + "&term=" + term;
+
+
+//YELP API
 
 $.ajax({
     url: myurl,
@@ -43,24 +42,29 @@ $.ajax({
     },
     method: 'GET',
     success: function (data) {
+
+for (var i=0; i < data.businesses.length; i++) {
+    // console.log("Name: " + data.businesses[i].name);
+    yelpName.push(data.businesses[i].name);
+    console.log(yelpName);
+    var obj = {latitude: data.businesses[i].coordinates.latitude, longitude: data.businesses[i].coordinates.longitude};
+    yelpCoordinates.push(obj);
+    console.log(yelpCoordinates);
+    // console.log("Latitude: " + );
+    // console.log("Longitude: " + );
+
+}
         console.log('success: ', data);
     }
 });
 
-var cityInput = "";
 
-event.preventDefault();
+//GOOGLE PLACES API
 cityInput = $('#exampleFormControlInput1').val().trim();
 
 var placesURL = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=" + cityInput + "&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&radius=5000&key=";
 
-
-var corsResolve = "https://cors-anywhere.herokuapp.com/";
-
-
-var apiKey = "AIzaSyAF-eDyAVsjiIBHAVrCNFhwrHuHHGVtGqg";
-
-$('#find-city').on("click", function () {
+$('#find-city').on("click", function (event) {
     event.preventDefault();
 
     var temp = $('#exampleFormControlInput1').val().trim();
@@ -82,6 +86,7 @@ $('#find-city').on("click", function () {
     }
     initialize();
 })
+
 
 var category = "food";
 var API_key = "gRTZgWGEiqxJda4wW8d6vbqO0QQcPqP3wPx0JsOTiX58Vw2cTzMS9WCe3ihn_A9CO9nAY3q2G0aaYoFtaDzxG710uz1CwzcE8UKfhKz8B23h1ai94ArS6oRbTfeLXHYx";
@@ -127,3 +132,4 @@ $(".logo-col").on('click', function () {
         }
     });
 })
+
