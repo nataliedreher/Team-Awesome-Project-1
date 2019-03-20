@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var map;
 function initMap(latCity, lngCity) {
     var cityLatLng = { lat: latCity, lng: lngCity },
@@ -23,8 +22,6 @@ var locations = [];
 
 var latCity;
 var lngCity;
-=======
->>>>>>> 5143e9127ea9c3b3dfef118795842370c4a821fd
 
 var cityInput;
 var fullName;
@@ -47,7 +44,7 @@ $.ajax({
     }
 });
 
-var cityInput = "";
+var cityInput;
 
 event.preventDefault();
 cityInput = $('#exampleFormControlInput1').val().trim();
