@@ -16,7 +16,8 @@ function initMap(latCity, lngCity) {
     var markers = locations.map(function (location, i) {
         return new google.maps.Marker({
             position: location,
-            label: labels[i % labels.length]
+            label: labels[i % labels.length],
+            animation: google.maps.Animation.DROP
         });
     });
 
@@ -167,3 +168,4 @@ $("#hist-bar").on("click", ".city", function() {
     }
     initialize();
 })
+
