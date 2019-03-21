@@ -16,7 +16,8 @@ function initMap(latCity, lngCity) {
     var markers = locations.map(function (location, i) {
         return new google.maps.Marker({
             position: location,
-            label: labels[i % labels.length]
+            label: labels[i % labels.length],
+            animation: google.maps.Animation.DROP
         });
     });
 
@@ -167,3 +168,38 @@ $("#hist-bar").on("click", ".city", function() {
     }
     initialize();
 })
+
+
+$(".gm-style").hover("img", function() {
+
+})
+
+var ClickEventHandler = function(map, origin) {
+    this.origin = origin;
+    this.map = map;
+    this.directionsService = new google.maps.DirectionsService;
+    this.directionsDisplay = new google.maps.DirectionsRenderer;
+    this.directionsDisplay.setMap(map);
+    this.placesService = new google.maps.places.PlacesService(map);
+    this.infowindow = new google.maps.InfoWindow;
+    this.infowindowContent = document.getElementById('infowindow-content');
+    this.infowindow.setContent(this.infowindowContent);
+
+    // Listen for clicks on the map.
+    this.map.addListener('click', this.handleClick.bind(this));
+  };
+
+  ClickEventHandler.prototype.handleClick = function(event) {
+    console.log('You clicked on: ' + event.latLng);
+    // If the event has a placeId, use it.
+    if (event.placeId) {
+      console.log('You clicked on place:' + event.placeId);
+
+      // Calling e.stop() on the event prevents the default info window from
+      // showing.
+      // If you call stop here when there is no placeId you will prevent some
+      // other map click event handlers from receiving the event.
+      event.stop();
+      this.getPlaceInformation(event.placeId);
+    }
+  };
